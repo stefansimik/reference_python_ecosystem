@@ -3,24 +3,24 @@
 ```python
 my_list = ['a', 'b', 'c', 'd']
 
-my_dict1 = {'key1': 'val1', 'key2': 'val2', 'key3': 'val3', 'key4': 'val4'}
+my_dict1 = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
 
-my_dict2 = {'key1': 'val1',
-            'key2': 'val2',
-            'key3': 'val3',
-            'key4': 'val4'}
+my_dict2 = {'k1': 'v1',
+            'k2': 'v2',
+            'k3': 'v3'}
 ```
 
 
 # Pandas
 
 ```python
-df.rename(columns={'col1': 'col1a', 'col2': 'col2a'}, inplace=True)
+df.rename(columns={'c1': 'c2', 'c3': 'c4', 'c5': 'c6'}, inplace=True)
 
-df.sort_values(['col1', 'col2', 'col3'], ascending=[True, True, True], inplace=True)
+df.sort_values(['c1', 'c2', 'c3'], ascending=[True, True, True], inplace=True)
 
-pd.merge(df1, df2, left_on='col1', right_on='col2', how='left')
+pd.merge(df1, df2, left_on='a', right_on='b', how='left')
 
-df.pivot_table(index=['col1', 'col2'], columns=['col3', 'col4'], 
-                     aggfunc={'col3': 'count', 'col4': sum})
+df.pivot_table(index=['c1', 'c2'], columns=['c3', 'c4'], aggfunc={'c3': 'count', 'c4': sum})
+
+df.apply(lambda row: row['col'], axis=1)
 ```
