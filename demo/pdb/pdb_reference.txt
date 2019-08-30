@@ -1,0 +1,56 @@
+Run script with debugger:
+    cd ./demo/pdb           # switch to current dir
+    python -m pdb test.py   # run test.py with PDB debugger
+
+Most used commands:
+    HELP
+        h(elp)  = show all PDB commands
+        h p     = show help for 'p' command
+    MOVE
+        n(ext)      = next line (steps over function)
+        s(tep)      = next line (step into function)
+
+        unt(il)     = continue execution until next line number (helps to exit loop)
+        r(eturn)    = continue execution current function returns
+        c(ontinue)  = continue execution ltill next breakpoint / or end of script
+        j(ump) 10   = set the line 10 as to be executed next
+
+        u(p)    = move 1 frame/level up
+        d(own)  = move 1 frame/level down
+
+    CONTEXT
+        w(here) = print all levels/frames
+        a(rgs)  = print arguments of current function
+        l(ist)  = print source code around current line
+            l 1,5 (print source code line numbers 1:5)
+        ll      = see the source related to the current function or frame
+
+    SHOW VARIABLES
+        x  = show content of variable 'x'
+        p  = print variable 'x'
+        pp = pretty-print variable 'x'
+
+    CUSTOM CODE
+        !x=2 = executes code x=2
+
+    BREAKPOINTS
+        b(reak)     = show all breakp
+        b(reak) 150 = set permanent breakpoint to line 150
+        tbreak 150  = set temporary (one-time) breakpoint to line 150
+        cl(ear)     = clear all breakpoints
+
+        Full syntax: b(reak) [[filename:]lineno | function[, condition]]
+
+        Examples:
+            break 13                        # Set breakpoint on line number 13
+            break divide                    # Set breakpoint on divide function
+            break divide, denominator == 0  # Set breakpoint in divide function only if denominator is 0
+
+    SPECIAL
+        interact = start interactive shell in debugger using the globals() and locals() in the current frame
+
+    QUIT
+        q = quit / abort program
+
+
+
